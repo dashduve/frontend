@@ -1,0 +1,181 @@
+{
+  "roles": [
+    {
+      "id_rol": 1,
+      "nombre": "Administrador",
+      "descripcion": "Control total del sistema"
+    },
+    {
+      "id_rol": 2,
+      "nombre": "Inventario",
+      "descripcion": "Gestión de inventario"
+    },
+    {
+      "id_rol": 3,
+      "nombre": "Ventas",
+      "descripcion": "Gestión de ventas"
+    },
+    {
+      "id_rol": 4,
+      "nombre": "Reportes",
+      "descripcion": "Acceso a reportes"
+    }
+  ],
+  "empresas": [
+    {
+      "id_empresa": 1,
+      "nombre": "PYME Ejemplo S.A.",
+      "ruc": "20123456789",
+      "direccion": "Av. Principal 123",
+      "telefono": "987654321",
+      "email_contacto": "contacto@pyme-ejemplo.com",
+      "sector": "Comercio",
+      "fecha_creacion": "2023-01-15 08:30:00",
+      "estado": "Activo"
+    }
+  ],
+  "usuarios": [
+    {
+      "id_usuario": 1,
+      "nombre_completo": "Admin Demo",
+      "email": "admin@demo.com",
+      "telefono": "987654321",
+      "estado": "Activo",
+      "fecha_creacion": "2023-01-15 10:00:00",
+      "ultima_conexion": "2023-03-20 14:30:00",
+      "id_empresa": 1
+    }
+  ],
+  "proveedores": [
+    {
+      "id_proveedor": 1,
+      "nombre": "Proveedor Ejemplo",
+      "contacto": "Juan Pérez",
+      "telefono": "923456789",
+      "email": "proveedor@ejemplo.com",
+      "direccion": "Calle Comercial 456",
+      "fecha_creacion": "2023-01-20 11:15:00"
+    }
+  ],
+  "categorias": [
+    {
+      "id_categoria": 1,
+      "nombre": "Electrónicos",
+      "descripcion": "Dispositivos electrónicos y accesorios",
+      "fecha_creacion": "2023-01-20 12:00:00"
+    },
+    {
+      "id_categoria": 2,
+      "nombre": "Oficina",
+      "descripcion": "Artículos de oficina y papelería",
+      "fecha_creacion": "2023-01-20 12:05:00"
+    }
+  ],
+  "productos": [
+    {
+      "id_producto": 1,
+      "codigo_barras": "7890123456789",
+      "nombre": "Laptop Demo",
+      "descripcion": "Laptop para demostraciones",
+      "id_categoria": 1,
+      "precio_compra": 1200.00,
+      "precio_venta": 1500.00,
+      "stock_minimo": 5,
+      "stock_maximo": 20,
+      "id_empresa": 1,
+      "id_proveedor": 1,
+      "fecha_creacion": "2023-01-25 09:30:00",
+      "ultima_actualizacion": "2023-01-25 09:30:00"
+    },
+    {
+      "id_producto": 2,
+      "codigo_barras": "9012345678901",
+      "nombre": "Resma Papel A4",
+      "descripcion": "Resma de papel blanco de 500 hojas",
+      "id_categoria": 2,
+      "precio_compra": 10.00,
+      "precio_venta": 15.00,
+      "stock_minimo": 20,
+      "stock_maximo": 100,
+      "id_empresa": 1,
+      "id_proveedor": 1,
+      "fecha_creacion": "2023-01-25 10:00:00",
+      "ultima_actualizacion": "2023-01-25 10:00:00"
+    }
+  ],
+  "inventarios": [
+    {
+      "id_inventario": 1,
+      "id_empresa": 1,
+      "fecha_actualizacion": "2023-03-15 16:45:00"
+    }
+  ],
+  "movimientos": [
+    {
+      "id_movimiento": 1,
+      "id_producto": 1,
+      "tipo_movimiento": "Entrada",
+      "cantidad": 10,
+      "fecha_movimiento": "2023-02-01 10:30:00",
+      "motivo": "Compra inicial",
+      "id_usuario": 1,
+      "costo_unitario": 1200.00,
+      "ubicacion": "Almacén principal"
+    },
+    {
+      "id_movimiento": 2,
+      "id_producto": 2,
+      "tipo_movimiento": "Entrada",
+      "cantidad": 50,
+      "fecha_movimiento": "2023-02-01 11:00:00",
+      "motivo": "Compra inicial",
+      "id_usuario": 1,
+      "costo_unitario": 10.00,
+      "ubicacion": "Almacén principal"
+    }
+  ],
+  "reportes": [
+    {
+      "id_reporte": 1,
+      "id_empresa": 1,
+      "tipo": "Inventario",
+      "fecha_generacion": "2023-03-01 15:30:00",
+      "archivo_pdf": "reporte_inventario_202303.pdf",
+      "id_usuario": 1
+    }
+  ],
+  "alertas": [
+    {
+      "id_alerta": 1,
+      "id_producto": 1,
+      "nivel_minimo": 5,
+      "estado": "Activo",
+      "fecha_creacion": "2023-02-15 09:45:00"
+    }
+  ],
+  "pedidos": [
+    {
+      "id_pedido": 1,
+      "id_empresa": 1,
+      "fecha_solicitud": "2023-02-20 11:00:00",
+      "fecha_entrega": "2023-03-01",
+      "estado": "Entregado"
+    }
+  ],
+  "detalles_pedidos": [
+    {
+      "id_detalle_pedido": 1,
+      "id_pedido": 1,
+      "id_producto": 1,
+      "cantidad": 5,
+      "precio_unitario": 1200.00
+    },
+    {
+      "id_detalle_pedido": 2,
+      "id_pedido": 1,
+      "id_producto": 2,
+      "cantidad": 20,
+      "precio_unitario": 10.00
+    }
+  ]
+}

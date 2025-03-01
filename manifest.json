@@ -1,0 +1,58 @@
+{
+  "short_name": "Inventario",
+  "name": "Sistema de Gestión de Inventarios",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icons/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0288d1",
+  "background_color": "#f8f9fa",
+  "orientation": "portrait",
+  "description": "Aplicación para gestión de inventarios para PYMES con funcionalidad offline",
+  "categories": ["business", "productivity"],
+  "screenshots": [
+    {
+      "src": "images/screenshot1.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    },
+    {
+      "src": "images/screenshot2.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Inventario",
+      "short_name": "Inventario",
+      "description": "Ver el inventario actual",
+      "url": "/inventario",
+      "icons": [{ "src": "icons/inventory.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Nuevo Producto",
+      "short_name": "Producto",
+      "description": "Añadir un nuevo producto",
+      "url": "/productos/crear",
+      "icons": [{ "src": "icons/product.png", "sizes": "192x192" }]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0288d1" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/icons/logo192.png" />
+    <title>Sistema de Inventario - Modo Sin Conexión</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #f8f9fa;
+        }
+        
+        .offline-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .offline-logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 30px;
+        }
+        
+        .offline-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0288d1;
+            margin-bottom: 15px;
+        }
+        
+        .offline-message {
+            font-size: 16px;
+            color: #616161;
+            max-width: 500px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        
+        .offline-button {
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .offline-button:hover {
+            background-color: #015f92;
+        }
+        
+        .offline-features {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 800px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 200px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-title {
+            font-weight: bold;
+            color: #0288d1;
+            margin-bottom: 10px;
+        }
+        
+        .feature-desc {
+            color: #616161;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <img src="%PUBLIC_URL%/icons/logo192.png" alt="Logo" class="offline-logo" />
+        <h1 class="offline-title">Sistema de Gestión de Inventarios</h1>
+        <p class="offline-message">
+            Actualmente estás en modo sin conexión. Algunas funcionalidades pueden estar limitadas,
+            pero aún puedes acceder a datos previamente cargados y realizar operaciones básicas.
+            Los cambios se sincronizarán cuando vuelvas a estar en línea.
+        </p>
+        <button class="offline-button" onclick="window.location.reload()">Intentar Reconectar</button>
+        
+        <div class="offline-features">
+            <div class="feature-card">
+                <div class="feature-title">Consulta de Inventario</div>
+                <div class="feature-desc">Accede a la información de productos y existencias guardadas localmente.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Registro de Movimientos</div>
+                <div class="feature-desc">Registra entradas y salidas que se sincronizarán cuando recuperes la conexión.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-title">Datos Básicos</div>
+                <div class="feature-desc">Consulta información de categorías, proveedores y alertas almacenadas previamente.</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Comprobar conexión periódicamente
+        function checkConnection() {
+            if (navigator.onLine) {
+                window.location.href = '/';
+            }
+        }
+        
+        // Verificar cada 30 segundos
+        setInterval(checkConnection, 30000);
+        
+        // Escuchar eventos de conexión
+        window.addEventListener('online', () => {
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>

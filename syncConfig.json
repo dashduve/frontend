@@ -1,0 +1,47 @@
+{
+  "syncInterval": 300000,
+  "maxRetries": 5,
+  "entidades": [
+    {
+      "nombre": "productos",
+      "prioridad": 1,
+      "camposPrincipales": ["nombre", "precio_venta", "stock_minimo"]
+    },
+    {
+      "nombre": "categorias",
+      "prioridad": 2,
+      "camposPrincipales": ["nombre"]
+    },
+    {
+      "nombre": "movimientos",
+      "prioridad": 1,
+      "camposPrincipales": ["tipo_movimiento", "cantidad", "fecha_movimiento"]
+    },
+    {
+      "nombre": "proveedores",
+      "prioridad": 3,
+      "camposPrincipales": ["nombre", "contacto", "telefono"]
+    },
+    {
+      "nombre": "alertas",
+      "prioridad": 2,
+      "camposPrincipales": ["id_producto", "nivel_minimo", "estado"]
+    },
+    {
+      "nombre": "pedidos",
+      "prioridad": 1,
+      "camposPrincipales": ["fecha_solicitud", "estado"]
+    }
+  ],
+  "configuracionCache": {
+    "tiempoMaximo": 86400000,
+    "tamanoMaximo": 50000000,
+    "estrategiaBorrado": "LRU"
+  },
+  "mensajesOffline": {
+    "errorConexion": "No hay conexión a internet. Los cambios se guardarán localmente y se sincronizarán cuando vuelva la conexión.",
+    "intentoSincronizacion": "Intentando sincronizar datos...",
+    "sincronizacionExitosa": "Datos sincronizados correctamente",
+    "errorSincronizacion": "Error al sincronizar. Se intentará más tarde."
+  }
+}
